@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매일우유</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.menu');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+<style type="text/css">
+
+/*-------------------모바일 메뉴----------------------*/
+
+/* 모바일 메뉴 버튼 */
+/* .menu {position: absolute; top: 10%; right:5%} */
+.menu>a{width: 100%;height: 100%; display: block;}
+
+a.close{
+    background-color: #fff; width: 50px; height: 50px;
+    position: absolute; right: 0; top: 0; color: #000;
+    line-height: 50px; text-align: center;
+}
+.left_gnbWrap{
+    height: 100%;
+    width: 200px;
+    position: fixed; right: -200px; top: 0;
+    background-color: #fff;
+    padding-top: 50px;
+    z-index: 999;
+    transition: all 0.3s;
+}
+.left_gnbWrap.on{
+    right:0;
+}
+.left_gnb>li{
+    width: 100%;
+}
+.left_gnb>li>a{
+    display: block; text-align: center; line-height: 50px;
+    width: 100%; height: 50px; background-color: #00aeef;
+    color: rgb(255, 255, 255);
+}
+.left_gnb>li>a.on{
+    background-color: #00aeef;
+}
+.left_gnb>li>ul{
+    display: none;
+}
+.left_gnb>li>ul>li>a{
+    display: block; text-align: center; line-height: 50px;
+    width: 100%; height: 50px; background-color: #fff;
+    color: e7e7e7;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="header">
+            <div class="inner">
+              <div class="logo">
+                <a href="index.html"><img src="img/header/logo.png"></a>
+                </div>
+                <ul class="menu_c">
+                    <li><a href="sub_1.html">회사소개</a></li>
+                    <li><a href="sub_2.html">제품소개</a></li>
+                    <li><a href="sub_3.html">사회공헌</a></li>
+                    <li><a href="sub_4.html">홍보센터</a></li>
+                    <li><a href="sub_5.html">캐릭터</a></li>
+                </ul>
+
+                <ul class="menu_r">
+                    <li>인재채용</li>
+                    <li>고객센터</li>
+                    <li>
+                      
+                         <div class="menu">
+                            <img src="img/header/menu.png">
+                          </div>
+                          <nav class="left_gnbWrap">
+                                      <a href="#" class="close">X</a>
+                                      <ul class="left_gnb">
+                                          <li>
+                                              <a href="#">회사소개</a>
+                                              <ul>
+                                                  <li><a href="sub_1.html">인사말</a></li>
+                                                  <li><a href="#">경영이념</a></li>
+                                                  <li><a href="#">사업분야</a></li>
+                                                  <li><a href="#">히스토리</a></li>
+                                              </ul>
+                                          </li>
+                                          <li>
+                                              <a href="#">제품소개</a>
+                                              <ul>
+                                                  <li><a href="sub_2.html">우유</a></li>
+                                                  <li><a href="#">치즈</a></li>
+                                                  <li><a href="#">유아식</a></li>
+                                                  <li><a href="#">분유</a></li>
+                                                  <li><a href="#">푸딩</a></li>
+                                                  <li><a href="#">버터</a></li>                                              </ul>
+                                          </li>
+                                          <li>
+                                              <a href="#">사회공헌</a>
+                                              <ul>
+                                                  <li><a href="sub_3.html">저출산</a></li>
+                                                  <li><a href="#">저소득</a></li>
+                                                  <li><a href="#">장학재단</a></li>
+                                              </ul>
+                                          </li>
+                                          <li>
+                                              <a href="#">홍보센터</a>
+                                              <ul>
+                                                  <li><a href="sub_4.html">유튜브</a></li>
+                                                  <li><a href="#">인스타그램</a></li>
+                                                  <li><a href="#">블로그</a></li>
+                                                  
+                                              </ul>
+                                          </li>
+
+                                          <li>
+                                            <a href="#">캐릭터</a>
+                                            <ul>
+                                                <li><a href="sub_5.html">캐릭터 소개</a></li>
+                                                <li><a href="#">굿즈샵</a></li>
+                                               
+                                                
+                                            </ul>
+                                        </li>
+
+
+
+
+
+
+
+                                      </ul>
+                                  </nav>
+    
+                    </li>
+                   
+
+
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="mainimg">
+            <div class="inner">
+                <div class="logo_main"><img src="img/main/main_text.png"></div>
+
+                <div class="search">
+                    <div>
+                        <div><img src="img/main/search.png"></div>
+                        <div>찾으시는 상품을 입력하세요</div>
+                        <div>search</div>
+                    </div>
+                </div>
+                
+                <div class="o1"></div>
+                <div class="o2"></div>
+                <div class="o3"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box1">
+            <div class="inner">
+                <h1>맛있는 우유 컬렉션</h1>
+                <ul class="imgset">
+                   
+                    <li>
+                        <div class="set1"><img src="img/content/m1.png"></div>
+                        <p>우유</p>
+                    </li>
+
+                    <li>
+                        <div class="set2"><img src="img/content/m2.png"></div>
+                        <p>치즈</p>
+                    </li>
+
+                    <li>
+                        <div class="set3"><img src="img/content/m3.png"></div>
+                        <p>유아식</p>
+                    </li>
+
+                    <li>
+                        <div class="set4"><img src="img/content/m6.png"></div>
+                        <p>분유</p>
+                    </li>
+
+                    <li>
+                        <div class="set5"><img src="img/content/m5.png"></div>
+                        <p>푸딩</p>
+                    </li>
+
+                    <li>
+                        <div class="set6"><img src="img/content/m4.png"></div>
+                        <p>버터</p>
+                    </li>
+
+                    <div class="left"></div>
+                    <div class="right"></div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="box2">
+            <div class="inner">
+                <h1>매일우유 핵심가치</h1>
+                <ul class="imgset2">
+                    <li>
+                        <h1>창의</h1>
+                        <div><img src="img/content/c1.png"></div>
+                        <p>멈춤없이 더 나은 것과<br>
+                            새로운 것을 추구하고 실행한다</p>
+                    </li>
+
+                    <li>
+                        <h1>소통</h1>
+                        <div><img src="img/content/c2.png"></div>
+                        <p>서로 존중하고 열린 마음으로<br>
+                            활발하게 대화하고 토론한다</p>
+                    </li>
+
+                    <li>
+                        <h1>열정</h1>
+                        <div><img src="img/content/c3.png"></div>
+                        <p>뜨거운 마음으로 일을 시작하고<br>
+                            끈기 있게 노력하여<br>
+                            최선의 결과를 만든다</p>
+                    </li>
+
+                    <li>
+                        <h1>상생</h1>
+                        <div><img src="img/content/c4.png"></div>
+                        <p>우리가 함께 일하는 낙농가,<br>
+                            파트너사 모두의 발전을 위해<br>
+                            일한다</p>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="box3">
+            <div class="inner">
+                <h1>이웃과 함께하는 매일우유 사회공헌 스토리</h1>
+                <ul class="imgset3">
+                    <li>
+                        <h1>특수분유 생산</h1>
+                        <p>선천성 대사이상 환아들을 위해<br>
+                            매일우유가 유일하게 생산중입니다</p>
+                        <div class="btn3">바로가기 ></div>
+                        <img src="img/content/s1.png">
+                    </li>
+                    <li>
+                        <h1>독거노인 우유배달</h1>
+                        <p>혼자 사는 노인분들께 안부를 전하며<br>
+                            매일 우유를 배달하고 있습니다</p>
+                        <div class="btn3">바로가기 ></div>
+                        <img src="img/content/s2.png">
+                    </li>
+                    <li>
+                        <h1>장학재단</h1>
+                        <p>학문에 뜻이 있으나, 가정형편이 어려운 학생과<br>
+                            학술기관을 위해 장학금을 지원합니다</p>
+                        <div class="btn3">바로가기 ></div>
+                        <img src="img/content/s3.png">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="box4">
+
+            <div class="youtube">
+                <div>
+                    <div>
+                        <h1>YOUTUBE</h1>
+                        <p>매일우유의 다양한 콘텐츠를 즐기세요</p>
+                        <div class="btn">모두보기 ></div>
+                    </div>
+                </div>
+                <div class="imgset">
+                    <img src="img/content/youtube.png">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="box5">
+            <div class="inner">
+                <h1>레시피</h1>
+                <ul class="imgset5">
+                    <li>
+                        <div><img src="img/content/r1.jpg"></div>
+                        <p>모짜렐라 카프리제</p>
+                    </li>
+
+                    <li>
+                        <div><img src="img/content/r2.jpg"></div>
+                        <p>크림리조또</p>
+                    </li>
+
+                    <li>
+                        <div><img src="img/content/r3.jpg"></div>
+                        <p>치즈 부르게스타</p>
+                    </li>
+
+                    <li>
+                        <div><img src="img/content/r4.jpg"></div>
+                        <p>라코타치즈 샐러드</p>
+                    </li>
+
+                    <li>
+                        <div><img src="img/content/r5.jpg"></div>
+                        <p>치즈듬뿍 김밥</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="box6">
+            <div class="inner">
+                <div class="text_box">
+                    <h1>매일우유 캐릭터</h1>
+                    <p>매일우유의 새로운 캐릭터 매일이,방울이,별이를<br>
+                        만나보세요</p>
+                    <div class="btn">보러가기 ></div>
+                </div>
+                <img src="img/content/banner.png">
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="box7">
+            <div class="inner">
+                <div class="left"></div>
+                <div class="right"></div>
+                <h1>매일우유 BRAND</h1>
+                <ul class="imgset7">
+                    <li>
+                        <div class="set"><img src="img/content/b1.jpg"></div>
+
+                    </li>
+
+                    <li>
+                        <div class="set"><img src="img/content/b2.jpg"></div>
+
+                    </li>
+
+                    <li>
+                        <div class="set"><img src="img/content/b3.jpg"></div>
+
+                    </li>
+
+                    <li>
+                        <div class="set"><img src="img/content/b4.jpg"></div>
+
+                    </li>
+
+                    <li>
+                        <div class="set"><img src="img/content/b5.jpg"></div>
+
+                    </li>
+
+                    <li>
+                        <div class="set"><img src="img/content/b6.jpg"></div>
+
+                    </li>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+        
+
+<div class="footer">
+    <div class="inner">
+    <ul class="set">
+        <li><img src="img/footer/logo_f.png"></li>
+
+
+        <li>
+            <ul>
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>이메일수집거부</li>
+            </ul>
+
+            <p>
+                Tel.051-1234-1234<br>
+                주소:서울시 서초구 남구 순환로 299 매일우유그룹<br>
+                ⓒ Copyright All Reserved
+            </p>
+        </li>
+
+
+        <li>
+            <ul>
+                <li><img src="img/footer/1.png"></li>
+                <li><img src="img/footer/2.png"></li>
+                <li><img src="img/footer/3.png"></li>
+                <li><img src="img/footer/4.png"></li>
+            </ul>
+        </li>
+
+
+    </ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

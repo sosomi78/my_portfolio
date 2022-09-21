@@ -1,0 +1,162 @@
+@font-face {font-family: 'Jalnan';
+    src: url("fonts/Jalnan.ttf") format("truetype");
+    
+}
+
+
+
+body{font-family: 'Jalnan';}
+
+/* 공통 */
+*{padding:0;margin:0;}
+ul,li{list-style: none;}
+.inner{width:1537px;margin:0 auto;}
+.wrap{overflow-x: hidden;}
+a {text-decoration: none; color:#b1b1b1}
+
+/* 헤더 */
+.header{height: 120px;line-height: 120px;
+}
+
+.logo{float:left;}
+.logo img{vertical-align: middle;}
+
+.menu_c{float:left;font-size: 15px;color:#b1b1b1;
+margin-left: 328px;}
+.menu_c>li{display: inline-block;padding-right:88px;}
+.menu_c>li>a:hover{color: #00aeef;transition: all 0.4s;}
+
+.menu_r{float:right;font-size: 15px;color:#b1b1b1;margin-top: 40px;}
+.menu_r>li{float:left;text-align:center;
+line-height: 41px;color:#fff;font-size: 15px;margin-left: 22px;}
+.menu_r>li:nth-child(1),.menu_r>li:nth-child(2){width:111px;height: 41px;background-color: #00aeef;border-radius: 50px;}
+.menu_r>li:nth-child(3){padding-top:7px;}
+
+.header:after{display: block;content:"";clear:both}
+
+.menu_c:after{display: block;content:"";clear:both}
+
+.menu_r:after{display: block;content:"";clear:both}
+
+
+
+
+/* 인트로 */
+
+.intro>.inner>div{font-size: 16px;padding:122px 0 36px;color: #00aeef;}
+.intro>.inner>div>img{padding-right: 8px;}
+.intro p{font-size: 62px; color:#b1b1b1;padding-bottom: 60px;}
+
+
+
+/* 탭 */
+
+
+.tap ul>li{float:left;width:212px;height: 51px;border-radius: 50px;text-align: center;line-height: 51px;
+color: #00aeef; background-color: #ffffff;font-size: 22px;margin-right: 30px; border: 2px solid #e7e7e7;}
+.tap ul>li:nth-child(1){color: #fff; background-color: #00aeef;font-size: 22px;margin-right: 30px; border: none; }
+.tap ul:after{display: block; content: "";clear: both;}
+
+
+
+
+
+
+/* 메인 */
+.main{margin: 100px 0 105px 0;}
+.main>.inner{width:1537px; height: 251px;border: 2px solid #e7e7e7;border-radius: 50px;}
+.main>.inner>h1{color: #00aeef;text-align:center;font-size: 30px;
+margin-top: 45px;}
+
+
+
+.search{width:1015px;
+    height: 80px;background-color: rgb(242, 242, 242);
+    border-radius: 50px;margin:0 auto;
+    margin-top:40px}
+    
+    
+    .search>ul{padding-top: 13px;}
+    .search>ul>li{float:left;}
+    .search>ul>li:nth-child(1){margin-left: 50px;
+        padding-top: 18px}
+    .search>ul>li:nth-child(2){margin-left: 11px;
+    color:#b1b1b1;padding-top: 20px;}
+    .search>ul>li:nth-child(3){margin-left: 537px;
+        width:180px;height: 50px;border-radius: 50px;
+    background-color: #00aeef;line-height: 50px;
+    color: #fff;font-size: 13px;margin-top:2px;text-align: center;}
+    
+    .search>ul:after{display: block;content:"";clear:both}
+
+
+ 
+
+
+    /* 콘텐츠 */
+.con{height: 1150px;}
+.con>.inner>div>p{color: #00aeef;font-size: 30px;margin-bottom: 100px;}
+
+.con>.inner>div>ul>li{width:355px;height: 355px;
+float:left;border: 2px solid #e7e7e7;border-radius: 50px;
+text-align: center;position: relative;margin: 0 33px 33px 0}
+.con>.inner>div>ul>li:nth-child(4),.con>.inner>div>ul>li:nth-child(8)
+{margin-right: 0;}
+
+
+.con>.inner>div>ul>li>img{width:26%;margin-top: 60px;}
+.con>.inner>div>ul>li>p{font-size: 25px;margin:35px 0 40px 0;color: #b1b1b1;}
+
+.con>.inner>div>ul>li>div{width:148px;height: 48px;border-radius: 50px;
+font-size: 20px;color: #fff;text-align:center;line-height: 48px;background-color: #00aeef;
+position: absolute;left:0;right:0;margin:0 auto;}
+
+.con>.inner>div>ul:after{display: block;content:"";clear:both}
+
+
+.btn{width:226px;height: 66px;margin:78px auto 0;border: 2px solid #e7e7e7;border-radius: 50px;
+font-size: 28px;text-align: center;line-height: 66px;color: #b1b1b1;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* 푸터 */
+    .footer{background-color: #00aeef;height: 348px;color: #fff;
+        }
+    .footer>.inner>.set{padding:124px 0 0 0;}
+    .footer>.inner>.set>li{float:left;}
+    .footer>.inner>.set>li:nth-child(2){padding-left: 126px;}
+    .footer>.inner>.set>li:nth-child(2)>ul>li{float:left;padding: 0 40px 35px 0 ;font-size: 20px;}
+    .footer>.inner>.set>li:nth-child(2)>p{line-height: 25px;font-size: 15px;}
+    .footer>.inner>.set>li:nth-child(3){float:right;padding-top: 15px;}
+    .footer>.inner>.set>li:nth-child(3)>ul>li{float: left;padding-right: 20px;}
+    .set:after{display: block; content: "";clear: both;}
+    
+
+
+
+
+
+
+
+
+
+

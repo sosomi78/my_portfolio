@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'NotoSansKR-Light';
+    src: url("NotoSansKR-Light.otf") format("opentype");
+
+}
+
+
+
+body {
+    font-family: 'NotoSansKR-Light';
+}
+
+
+
+
+
+
+
+*{padding: 0;margin:0;}
+.inner{width:70%; margin:0 auto;}
+ul,li{list-style: none;}
+a{text-decoration: none;color:inherit;}
+
+
+/* header */
+.header{height:176px;}
+.logo{float:left;line-height: 176px;font-size: 30px;letter-spacing: 2px;}
+.menu{float:right;line-height: 176px;font-size: 15px;}
+.menu li{float:left;text-align: right;margin-left:50px;letter-spacing: 2px;}
+.menu li:hover{color: #319349;}
+/* .logo:hover{color: rgb(187, 44, 44);} */
+.menu::after{display: block;content: "";clear: both;}
+
+
+
+/* main */
+.main{width:100%;margin:0 auto;}
+.main img{width:100%;}
+
+
+
+
+
+
+.backinner{width: 50%;
+    margin: 0 auto;}
+
+.btn{width: 150px;
+    height: 50px;
+    background-color: black;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 20px;
+    margin: 60px auto 100px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #747474;}
+
+
+
+
+
+    .backinner2{width:50%;margin: 0 auto;}
+    
+    .btn2,.btn3{width: 150px;
+        height: 50px;
+        background-color: black;
+        color: #fff;
+        border-radius: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;border: 1px solid #747474;}
+
+        .btnset{width:45%;margin:0 auto;
+            margin: 60px auto 100px;}
+        .btnset:after{display: block;content: "";clear: both;}
+
+     .btn2{float:left;}
+     .btn3{float:right;}
+
+
+
+
+
+
+
+
+     .backinner3{width:60%;margin: 0 auto;}
+    
+    .btn4{width: 200px;
+        height: 50px;
+        background-image: url(../img/naver_back.png);
+        color: #fff;
+        border-radius: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        border:1px solid #e7e7e7;
+       
+        text-align: center;}
+        
+
+
+
+        .btn5{width: 200px;
+            background-image: url(../img/insta_back.png);
+            height: 50px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50px;
+            border:1px solid #e7e7e7;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;}
+
+        .btnset2{width:45%;margin:0 auto;
+            margin: 40px auto 40px;}
+        .btnset2:after{display: block;content: "";clear: both;}
+
+     .btn4{float:left;}
+     .btn5{float:right;}
+
+.store_main{margin:0 auto 4;}
+.store_main img{width:100%;}
+
+
+
+
+.btn:hover,.btn2:hover,.btn3:hover,.btn4:hover,.btn5:hover{background-color: #fff;color: black;
+border: 1px solid #747474;}
+
+.btn4:hover{color:rgb(0, 0, 0);
+    border: 1px solid #747474;}
+
+.btn5:hover{color: #fff;
+        border: 1px solid #747474;}
+
+
+
+
+.ex{font-size: 20px;color:#9c9c9c;
+margin:30px auto 20px;text-align: center;}
+
+
+/* con box1 */
+.box1_1,.box1_2,.box1_3{width:32%;float:left;}
+.box1_1 img,.box1_2 img,.box1_3 img{width:100%;}
+.box1_2{margin:0 2% 0}
+.txt{text-align: center;height: 40px;margin-top:10px;font-size: 12px;color:#747474;letter-spacing: 2px;;}
+
+
+
+
+
+
+
+/* con box2 */
+.box2_1,.box2_2,.box2_3{width:32%;float:left;}
+.box2_1 img,.box2_2 img,.box2_3 img{width:100%;}
+.box2_2{margin:0 2% 0}
+
+
+
+
+
+
+
+
+
+/* footer */
+.footer{height: 100px;margin:0 auto 0;
+text-align: center;line-height: 100px;
+border-top: 1px solid #cecece}
+
+.header_m{display: none;}
+
+@media (max-width:1040px){
+    .box1_1,.box1_2,.box1_3{width:100%;}
+    .box2_1,.box2_2,.box2_3{width:100%;}
+    .box3_1,.box3_2,.box3_3{width:100%;}
+.header{display: none}
+.header_m{display:block}
+.header_m .inner{text-align: center;}
+.logo_m,.munu_m{float:none;}
+.logo_m{line-height: 176px;font-size: 30px;
+letter-spacing: 2px;}
+.menu_m{letter-spacing: 2px;
+margin-bottom: 60px;}
+.menu_m li{margin-bottom: 20px;}
+.menu_m li:hover{color: #319349;}
+
+
+}
+
+
+@media (max-width:1569px){
+    .btnset2{width:100%;margin:0 auto;}
+    .btn4,.btn5{float:none;margin:20px auto 20px;}
+}
+
+
+@media (max-width:1408px){
+.btnset{width:100%;margin:0 auto;}
+.btn2,.btn3{float:none;margin:20px auto 20px;}
+}
