@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'NotoSansKR-Light';
-    src: url("NotoSansKR-Light.otf") format("opentype");
+    font-family: 'NotoSansKR-Thin';
+    src: url("fonts/NotoSansKR-Thin.otf") format("opentype");
 
 }
 
 
 
 body {
-    font-family: 'NotoSansKR-Light';
+    font-family: 'NotoSansKR-Thin';
 }
 
 
